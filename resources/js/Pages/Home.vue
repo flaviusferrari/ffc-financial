@@ -1,4 +1,5 @@
 <template>
+    <AppHeader title="Home" />
     <div>
         <h2>Home</h2>
         <p>Testando o parágrafo no VUE</p>
