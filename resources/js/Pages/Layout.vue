@@ -1,8 +1,7 @@
 <template>
   <main>
     <header>
-      <Link href="/">Home</Link>
-      <Link href="/users">Usuários</Link>
+        <NavBar />
     </header>
     <article>
       <slot />
@@ -11,7 +10,7 @@
 </template>
 
 <script setup>
-import {Link} from '@inertiajs/vue3'
+import NavBar from '../Components/NavBar.vue'
 </script>
 
 <style>
