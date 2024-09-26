@@ -12,6 +12,14 @@
       <li class="nav-item d-none d-sm-inline-block">
         <Link href="/users" class="nav-link">Usuários</Link>
       </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <Link
+            href="/logout"
+            method="post"
+          >
+              Log Out
+          </Link>
+      </li>
     </ul>
 
     <!-- Right navbar links -->
@@ -58,7 +66,7 @@
             <!-- Message Start -->
             <div class="media">
               <img
-                src="../../dist/img/user1-128x128.jpg"
+                src=""
                 alt="User Avatar"
                 class="img-size-50 mr-3 img-circle"
               />
@@ -82,7 +90,7 @@
             <!-- Message Start -->
             <div class="media">
               <img
-                src="../../dist/img/user8-128x128.jpg"
+                src=""
                 alt="User Avatar"
                 class="img-size-50 img-circle mr-3"
               />
@@ -106,7 +114,7 @@
             <!-- Message Start -->
             <div class="media">
               <img
-                src="../../dist/img/user3-128x128.jpg"
+                src=""
                 alt="User Avatar"
                 class="img-size-50 img-circle mr-3"
               />
