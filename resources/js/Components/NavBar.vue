@@ -4,12 +4,10 @@
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"
-          ><i class="fas fa-bars"></i
-        ></a>
+        <Link class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></Link>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <Link href="/" class="nav-link">Home</Link>
+        <Link href="/" class="nav-link">Dashbord</Link>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <Link href="/users" class="nav-link">Usuários</Link>
