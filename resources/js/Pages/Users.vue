@@ -1,5 +1,16 @@
+<script setup>
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
+import { Head } from '@inertiajs/vue3';
+
+  defineProps({
+    name: String,
+  });
+</script>
+
 <template>
-  <AppHeader title="Usuários" />
+  <Head title="Usuários" />
+
+  <AuthenticatedLayout>
     <!-- Content Header -->
     <div class="content-header">
       <div class="container-fluid">
@@ -7,10 +18,5 @@
         Bem vindo, {{ name }}
       </div>
     </div>
+  </AuthenticatedLayout>
 </template>
-
-<script setup>
-  defineProps({
-    name: String,
-});
-</script>
