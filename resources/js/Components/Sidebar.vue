@@ -30,23 +30,6 @@ import DropdownLink from "@/Components/DropdownLink.vue";
         </div>
       </div>
 
-      <!-- SidebarSearch Form -->
-      <div class="form-inline">
-        <div class="input-group" data-widget="sidebar-search">
-          <input
-            class="form-control form-control-sidebar"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <div class="input-group-append">
-            <button class="btn btn-sidebar">
-              <i class="fas fa-search fa-fw"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul
@@ -77,47 +60,126 @@ import DropdownLink from "@/Components/DropdownLink.vue";
               </li>
             </ul>
           </li>
-          <!-- USUÁRIOS -->
+          <!-- CADASTROS -->
           <Dropdown>
             <template #trigger>
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-user"></i>
                 <p>
-                  Usuários
+                  Cadastros
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
             </template>
 
             <template #content>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Active Page</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Inactive Page</p>
-                </a>
-              </li>
+              <!-- Fornecedores -->
               <DropdownLink :href="route('profile.edit')">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Profile</p>
+                <p>Fornecedores</p>
               </DropdownLink>
+
+              <!-- Bancos -->
+              <DropdownLink :href="route('profile.edit')">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Bancos</p>
+              </DropdownLink>
+
+              <!-- FINANCEIRO -->
+              <Dropdown>
+                <template #trigger>
+                  <a href="#" class="nav-link" style="background-color: #323440">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>
+                      Financeiro
+                      <i class="right fas fa-angle-left"></i>
+                    </p>
+                  </a>
+                </template>
+
+                <template #content>
+                  <DropdownLink :href="route('profile.edit')" class="mp-10" style="background-color: #494f75">
+                    <i class="far fa-dot-circle nav-icon"></i>
+                    <p >Centro de Custo</p>
+                  </DropdownLink>
+                  <DropdownLink :href="route('profile.edit')" class="mp-10" style="background-color: #494f75">
+                    <i class="far fa-dot-circle nav-icon"></i>
+                    <p >Grupos</p>
+                  </DropdownLink>
+                  <DropdownLink :href="route('profile.edit')" class="mp-10" style="background-color: #494f75">
+                    <i class="far fa-dot-circle nav-icon"></i>
+                    <p >Categorias</p>
+                  </DropdownLink>
+                </template>
+              </Dropdown>
             </template>
           </Dropdown>
 
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Simple Link
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li>
+          <!-- FINANCEIRO -->
+          <Dropdown>
+            <template #trigger>
+              <a href="#" class="nav-link">
+                <i class="nav-icon far fa-money-bill-alt"></i>
+                <p>
+                  Financeiro
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+            </template>
+
+            <template #content>
+              <!-- LANÇAMENTOS -->
+              <DropdownLink :href="route('profile.edit')">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Lançamentos</p>
+              </DropdownLink>
+              <Dropdown>
+                <template #trigger>
+                  <a href="#" class="nav-link" style="background-color: #323440">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>
+                      Contas
+                      <i class="right fas fa-angle-left"></i>
+                    </p>
+                  </a>
+                </template>
+
+                <template #content>
+                  <!-- CONTAS A PAGAR -->
+                  <DropdownLink :href="route('profile.edit')" class="mp-10" style="background-color: #494f75">
+                    <i class="far fa-dot-circle nav-icon"></i>
+                    <p >Pagar</p>
+                  </DropdownLink>
+                  <!-- CONTAS A RECEBER -->
+                  <DropdownLink :href="route('profile.edit')" class="mp-10" style="background-color: #494f75">
+                    <i class="far fa-dot-circle nav-icon"></i>
+                    <p >Receber</p>
+                  </DropdownLink>
+                </template>
+              </Dropdown>
+            </template>
+          </Dropdown>
+
+          <!-- RELATÓRIOS -->
+          <Dropdown>
+            <template #trigger>
+              <a href="#" class="nav-link">
+                <i class="fas fa-file-alt"></i>&nbsp;
+                <p>
+                  Relatórios
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+            </template>
+
+            <template #content>
+              <!-- Fluxo de Caixa -->
+              <DropdownLink :href="route('profile.edit')">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Fluxo de Caixa</p>
+              </DropdownLink>
+            </template>
+          </Dropdown>
         </ul>
       </nav>
     </div>

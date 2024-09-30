@@ -16,14 +16,14 @@ const props = defineProps({
     },
 });
 
-const closeOnEscape = (e) => {
-    if (open.value && e.key === 'Escape') {
-        open.value = false;
-    }
-};
+// const closeOnEscape = (e) => {
+//     if (open.value && e.key === 'Escape') {
+//         open.value = false;
+//     }
+// };
 
-onMounted(() => document.addEventListener('keydown', closeOnEscape));
-onUnmounted(() => document.removeEventListener('keydown', closeOnEscape));
+// onMounted(() => document.addEventListener('keydown', closeOnEscape));
+// onUnmounted(() => document.removeEventListener('keydown', closeOnEscape));
 
 const widthClass = computed(() => {
     return {
@@ -60,9 +60,9 @@ const open = ref(false);
         <div
             v-show="open"
             class=""
-            :class="[widthClass, alignmentClasses]"
-            style="display: none"
-            @click="open = false"
+            :class="alignmentClasses"
+            style="display: block"
+            @click="open = true"
         >
             <ul class="nav nav-treeview" style="display: block;">
                 <slot name="content" />
