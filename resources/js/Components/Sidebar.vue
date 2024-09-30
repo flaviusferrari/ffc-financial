@@ -1,3 +1,9 @@
+<script setup>
+import { Link } from "@inertiajs/vue3";
+import Dropdown from "@/Components/Dropdown.vue";
+import DropdownLink from "@/Components/DropdownLink.vue";
+</script>
+
 <template>
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -17,14 +23,10 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img
-            src=""
-            class="img-circle elevation-2"
-            alt="User Image"
-          />
+          <img src="" class="img-circle elevation-2" alt="User Image" />
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">{{ $page.props.auth.user.name }}</a>
         </div>
       </div>
 
@@ -55,7 +57,7 @@
         >
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
+          <li class="nav-item">
             <Link href="/" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               Dashbord
@@ -75,6 +77,38 @@
               </li>
             </ul>
           </li>
+          <!-- USUÁRIOS -->
+          <Dropdown>
+            <template #trigger>
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-user"></i>
+                <p>
+                  Usuários
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+            </template>
+
+            <template #content>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Active Page</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Inactive Page</p>
+                </a>
+              </li>
+              <DropdownLink :href="route('profile.edit')">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Profile</p>
+              </DropdownLink>
+            </template>
+          </Dropdown>
+
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
@@ -89,10 +123,3 @@
     </div>
   </aside>
 </template>
-
-<script setup>
-import {Link} from '@inertiajs/vue3'
-</script>
-
-<style>
-</style>

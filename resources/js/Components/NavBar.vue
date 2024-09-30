@@ -1,7 +1,10 @@
+<script setup>
+import {Link} from '@inertiajs/vue3'
+</script>
+
 <template>
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
         <Link class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></Link>
@@ -10,15 +13,10 @@
         <Link href="/" class="nav-link">Dashbord</Link>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <Link href="/users" class="nav-link">Usuários</Link>
+        <Link :href="route('users')" class="nav-link">Usuários</Link>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <Link
-            href="/logout"
-            method="post"
-          >
-              Log Out
-          </Link>
+        <Link :href="route('logout')" method="post" class="nav-link">Sair</Link>
       </li>
     </ul>
 
@@ -185,7 +183,3 @@
     </ul>
   </nav>
 </template>
-
-<script setup>
-import {Link} from '@inertiajs/vue3'
-</script>

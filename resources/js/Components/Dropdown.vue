@@ -45,40 +45,28 @@ const open = ref(false);
 </script>
 
 <template>
-    <div class="relative">
-        <div @click="open = !open">
-            <slot name="trigger" />
-        </div>
+    <li class="nav-item menu-is-opening menu-open" @click="open = !open">
+        <slot name="trigger" />
+    </li>
 
-        <!-- Full Screen Dropdown Overlay -->
+    <Transition
+        enter-active-class="transition ease-out duration-200"
+        enter-from-class="opacity-0 scale-95"
+        enter-to-class="opacity-100 scale-100"
+        leave-active-class="transition ease-in duration-75"
+        leave-from-class="opacity-100 scale-100"
+        leave-to-class="opacity-0 scale-95"
+    >
         <div
             v-show="open"
-            class="fixed inset-0 z-40"
+            class=""
+            :class="[widthClass, alignmentClasses]"
+            style="display: none"
             @click="open = false"
-        ></div>
-
-        <Transition
-            enter-active-class="transition ease-out duration-200"
-            enter-from-class="opacity-0 scale-95"
-            enter-to-class="opacity-100 scale-100"
-            leave-active-class="transition ease-in duration-75"
-            leave-from-class="opacity-100 scale-100"
-            leave-to-class="opacity-0 scale-95"
         >
-            <div
-                v-show="open"
-                class="absolute z-50 mt-2 rounded-md shadow-lg"
-                :class="[widthClass, alignmentClasses]"
-                style="display: none"
-                @click="open = false"
-            >
-                <div
-                    class="rounded-md ring-1 ring-black ring-opacity-5"
-                    :class="contentClasses"
-                >
-                    <slot name="content" />
-                </div>
-            </div>
-        </Transition>
-    </div>
+            <ul class="nav nav-treeview" style="display: block;">
+                <slot name="content" />
+            </ul>
+        </div>
+    </Transition>
 </template>
