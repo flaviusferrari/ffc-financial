@@ -1,6 +1,8 @@
 <script setup>
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head } from "@inertiajs/vue3";
+import SupplierHead from "./Partials/SupplierHead.vue";
+import LinkButton from "../../Components/LinkButton.vue"
 </script>
 
 
@@ -8,16 +10,8 @@ import { Head } from "@inertiajs/vue3";
   <Head title="Fornecedores" />
 
   <AuthenticatedLayout>
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Fornecedores</h1>
-          </div>
-          <div class="col-sm-6"></div>
-        </div>
-      </div>
-    </section>
+
+    <SupplierHead />
 
     <!-- Main content -->
     <section class="content">
@@ -26,10 +20,20 @@ import { Head } from "@inertiajs/vue3";
           <h3 class="card-title">Lista de Fornecedores</h3>
 
           <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+            <button
+              type="button"
+              class="btn btn-tool"
+              data-card-widget="collapse"
+              title="Collapse"
+            >
               <i class="fas fa-minus"></i>
             </button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+            <button
+              type="button"
+              class="btn btn-tool"
+              data-card-widget="remove"
+              title="Remove"
+            >
               <i class="fas fa-times"></i>
             </button>
           </div>
@@ -103,7 +107,9 @@ import { Head } from "@inertiajs/vue3";
           </table>
         </div>
         <div class="card-footer">
-          <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i> Novo</button>
+          <LinkButton class="btn-primary float-right" href="/fornecedor/create">
+            Novo
+          </LinkButton>
         </div>
       </div>
     </section>
