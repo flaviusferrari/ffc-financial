@@ -74,7 +74,7 @@ import DropdownLink from "@/Components/DropdownLink.vue";
 
             <template #content>
               <!-- Fornecedores -->
-              <DropdownLink :href="route('profile.edit')">
+              <DropdownLink :href="route('fornecedor.index')">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Fornecedores</p>
               </DropdownLink>
