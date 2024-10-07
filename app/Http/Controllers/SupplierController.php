@@ -11,7 +11,7 @@ class SupplierController extends Controller
      */
     public function index()
     {
-        return inertia('Supplier');
+        return inertia('Supplier/SupplierList');
     }
 
     /**
@@ -19,7 +19,7 @@ class SupplierController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('Supplier/SupplierNew');
     }
 
     /**
