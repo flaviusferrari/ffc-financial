@@ -2,6 +2,7 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head } from "@inertiajs/vue3";
 import SupplierHead from "./Partials/SupplierHead.vue";
+import InputForm from "@/Components/InputForm.vue";
 </script>
 
 
@@ -9,7 +10,6 @@ import SupplierHead from "./Partials/SupplierHead.vue";
   <Head title="Fornecedores" />
 
   <AuthenticatedLayout>
-
     <SupplierHead />
 
     <!-- Main content -->
@@ -40,80 +40,61 @@ import SupplierHead from "./Partials/SupplierHead.vue";
         <div class="card-body">
           <form>
             <div class="row">
+              <!-- RAZÃO SOCIAL -->
               <div class="col-8">
-                <div class="form-group">
-                  <label>Razão Social</label>
-                  <input type="text" class="form-control" id="" placeholder="Enter email">
-                </div>
+                <InputForm label="Razão Social" name="social_name"></InputForm>
               </div>
+              <!-- NOME FANTASIA-->
               <div class="col-4">
-                <div class="form-group">
-                  <label>Nome Fantasia</label>
-                  <input type="text" class="form-control" id="" placeholder="">
-                </div>
+                <InputForm
+                  label="Nome Fantasia"
+                  name="fantasi_name"
+                ></InputForm>
               </div>
             </div>
 
             <div class="row">
+              <!-- CEP -->
               <div class="col-2">
-                <div class="form-group">
-                  <label>CEP</label>
-                  <input type="text" class="form-control" id="" placeholder="">
-                </div>
+                <InputForm label="CEP" name="cep"></InputForm>
               </div>
+              <!-- Endereço -->
               <div class="col-6">
-                <div class="form-group">
-                  <label>Endereço</label>
-                  <input type="text" class="form-control" id="" placeholder="">
-                </div>
+                <InputForm label="Endereço" name="address"></InputForm>
               </div>
+              <!-- Número -->
               <div class="col-2">
-                <div class="form-group">
-                  <label>Número</label>
-                  <input type="text" class="form-control" id="" placeholder="">
-                </div>
+                <InputForm label="Número" name="number"></InputForm>
               </div>
+              <!-- Complemento -->
               <div class="col-2">
-                <div class="form-group">
-                  <label>Complemento</label>
-                  <input type="text" class="form-control" id="" placeholder="">
-                </div>
+                <InputForm label="Complemento" name="complement"></InputForm>
               </div>
             </div>
 
             <div class="row">
+              <!-- Bairro -->
               <div class="col-6">
-                <div class="form-group">
-                  <label>Bairro</label>
-                  <input type="text" class="form-control" id="" placeholder="">
-                </div>
+                <InputForm label="Bairro" name="neighborhood"></InputForm>
               </div>
+              <!-- Cidade -->
               <div class="col-3">
-                <div class="form-group">
-                  <label>Cidade</label>
-                  <input type="text" class="form-control" id="" placeholder="">
-                </div>
+                <InputForm label="Cidade" name="city"></InputForm>
               </div>
+              <!-- Estado -->
               <div class="col-3">
-                <div class="form-group">
-                  <label>Estado</label>
-                  <input type="text" class="form-control" id="" placeholder="">
-                </div>
+                <InputForm label="Estado" name="state"></InputForm>
               </div>
             </div>
 
             <div class="row">
+              <!-- CNPJ -->
               <div class="col-3">
-                <div class="form-group">
-                  <label>CNPJ</label>
-                  <input type="text" class="form-control" id="" placeholder="">
-                </div>
+                <InputForm label="CNPJ" name="cnpj"></InputForm>
               </div>
+              <!-- E-mail -->
               <div class="col-6">
-                <div class="form-group">
-                  <label>E-mail</label>
-                  <input type="text" class="form-control" id="" placeholder="">
-                </div>
+                <InputForm label="E-mail" name="email" placeholder="E-mail"></InputForm>
               </div>
             </div>
           </form>
