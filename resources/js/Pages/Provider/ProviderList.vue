@@ -1,7 +1,7 @@
 <script setup>
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head } from "@inertiajs/vue3";
-import SupplierHead from "./Partials/SupplierHead.vue";
+import ProviderHead from "./Partials/ProviderHead.vue";
 import LinkButton from "../../Components/LinkButton.vue"
 </script>
 
@@ -11,7 +11,7 @@ import LinkButton from "../../Components/LinkButton.vue"
 
   <AuthenticatedLayout>
 
-    <SupplierHead />
+    <ProviderHead />
 
     <!-- Main content -->
     <section class="content">

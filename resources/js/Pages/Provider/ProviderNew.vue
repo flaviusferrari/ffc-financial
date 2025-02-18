@@ -1,8 +1,20 @@
 <script setup>
+import { reactive } from 'vue'
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
-import { Head } from "@inertiajs/vue3";
-import SupplierHead from "./Partials/SupplierHead.vue";
+import { Head, router } from "@inertiajs/vue3";
+import ProviderHead from "./Partials/ProviderHead.vue";
 import InputForm from "@/Components/InputForm.vue";
+
+const form = reactive({
+  first_name: null,
+  last_name: null,
+  email: null,
+})
+
+function submit() {
+  // router.post('/fornecedores', form)
+  console.log(form);
+}
 </script>
 
 
@@ -10,7 +22,7 @@ import InputForm from "@/Components/InputForm.vue";
   <Head title="Fornecedores" />
 
   <AuthenticatedLayout>
-    <SupplierHead />
+    <ProviderHead />
 
     <!-- Main content -->
     <section class="content">
@@ -38,7 +50,7 @@ import InputForm from "@/Components/InputForm.vue";
           </div>
         </div>
         <div class="card-body">
-          <form>
+          <form @submit.prevent="submit">
             <div class="row">
               <!-- RAZÃO SOCIAL -->
               <div class="col-8">
@@ -97,10 +109,11 @@ import InputForm from "@/Components/InputForm.vue";
                 <InputForm label="E-mail" name="email" placeholder="E-mail"></InputForm>
               </div>
             </div>
+            <button type="submit">Login</button>
           </form>
         </div>
         <div class="card-footer">
-          <button type="button" class="btn btn-success float-right">
+          <button type="submit" class="btn btn-success float-right">
             <i class="fas fa-plus"></i> Cadastrar
           </button>
         </div>
